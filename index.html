@@ -381,12 +381,16 @@
       padding-top: var(--nav-h);
     }
 
-    /* Moroccan diamond grid */
+    /* Zellige Moroccan tile pattern */
     .hero-pat {
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.045)' stroke-width='1'%3E%3Cpath d='M40 2L78 40 40 78 2 40Z'/%3E%3Cpath d='M40 14L66 40 40 66 14 40Z'/%3E%3Cpath d='M40 26L54 40 40 54 26 40Z'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 80px 80px;
+      overflow: hidden;
+    }
+
+    .hero-pat svg {
+      width: 100%;
+      height: 100%;
     }
 
     /* Green ambient glow */
@@ -2142,7 +2146,37 @@
      HERO
 ================================================================ -->
   <section class="hero" id="home">
-    <div class="hero-pat"></div>
+    <div class="hero-pat">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="zellige" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+            <!-- Zellige 8-pointed star fill -->
+            <polygon points="86,60 70,55.9 78.4,41.6 64.1,50 60,34 55.9,50 41.6,41.6 50,55.9 34,60 50,64.1 41.6,78.4 55.9,70 60,86 64.1,70 78.4,78.4 70,64.1" fill="rgba(39,174,96,0.1)" stroke="none"/>
+            <!-- Zellige strokes -->
+            <g fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-linejoin="round">
+              <polygon points="86,60 70,55.9 78.4,41.6 64.1,50 60,34 55.9,50 41.6,41.6 50,55.9 34,60 50,64.1 41.6,78.4 55.9,70 60,86 64.1,70 78.4,78.4 70,64.1"/>
+              <line x1="86" y1="60" x2="120" y2="60"/>
+              <line x1="34" y1="60" x2="0" y2="60"/>
+              <line x1="60" y1="34" x2="60" y2="0"/>
+              <line x1="60" y1="86" x2="60" y2="120"/>
+              <line x1="78.4" y1="41.6" x2="120" y2="0"/>
+              <line x1="41.6" y1="41.6" x2="0" y2="0"/>
+              <line x1="41.6" y1="78.4" x2="0" y2="120"/>
+              <line x1="78.4" y1="78.4" x2="120" y2="120"/>
+              <polygon points="52,0 60,9 68,0"/>
+              <polygon points="120,52 111,60 120,68"/>
+              <polygon points="52,120 60,111 68,120"/>
+              <polygon points="0,52 9,60 0,68"/>
+              <polygon points="0,0 13,0 0,13"/>
+              <polygon points="120,0 107,0 120,13"/>
+              <polygon points="0,120 13,120 0,107"/>
+              <polygon points="120,120 107,120 120,107"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#zellige)"/>
+      </svg>
+    </div>
     <div class="hero-glow"></div>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -2470,198 +2504,18 @@
         </div>
 
       </div>
+
+      <div style="text-align:center;margin-top:52px;">
+        <a href="processus.html" class="btn btn-green reveal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          Voir le processus en détail
+        </a>
+      </div>
+
     </div>
   </section>
 
 
-  <!-- ================================================================
-     PROCESS DÉTAILLÉ
-================================================================ -->
-  <section class="sec-process">
-    <div class="container">
-
-      <div class="sec-head">
-        <div class="sec-tag reveal">En détail</div>
-        <h2 class="sec-title reveal d1">Ce qui se passe à chaque étape</h2>
-        <p class="sec-sub reveal d2">Transparence totale sur notre méthode de vérification, de votre demande jusqu'à la remise du rapport.</p>
-      </div>
-
-      <div class="process-list">
-
-        <!-- Étape 1 -->
-        <div class="process-item reveal">
-          <div class="process-bubble-wrap">
-            <div class="process-bubble">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
-                <line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
-              </svg>
-              <div class="process-num">1</div>
-            </div>
-          </div>
-          <div class="process-body">
-            <div class="process-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              5 minutes
-            </div>
-            <h3>Soumettez votre demande en ligne</h3>
-            <p>Remplissez notre formulaire depuis n'importe où dans le monde. Pas besoin de vous déplacer — tout se fait en ligne, en quelques clics. Dès réception, votre dossier est assigné à un expert de la région concernée.</p>
-            <div class="process-details">
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
-                <div class="process-detail-text"><strong>Adresse du bien</strong><span>Ville, quartier, référence cadastrale si disponible</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                <div class="process-detail-text"><strong>Identité du vendeur</strong><span>Nom, CIN ou passeport du propriétaire déclaré</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-                <div class="process-detail-text"><strong>Formule choisie</strong><span>Basique, Standard ou Premium selon vos besoins</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-                <div class="process-detail-text"><strong>Paiement sécurisé</strong><span>CB, virement ou paiement mobile — 100% chiffré</span></div>
-              </div>
-            </div>
-            <div class="process-note">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9z"/></svg>
-              Confirmation de réception immédiate par email dès votre paiement validé
-            </div>
-          </div>
-        </div>
-
-        <!-- Étape 2 -->
-        <div class="process-item reveal d1">
-          <div class="process-bubble-wrap">
-            <div class="process-bubble">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-              </svg>
-              <div class="process-num">2</div>
-            </div>
-          </div>
-          <div class="process-body">
-            <div class="process-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              24 — 48h sur le terrain
-            </div>
-            <h3>Nos experts enquêtent sur le terrain</h3>
-            <p>Dès réception du dossier, notre équipe se mobilise. Chaque vérification est menée avec rigueur et discrétion — le vendeur n'est jamais informé de notre démarche. Nous croisons plusieurs sources officielles pour garantir l'exactitude des résultats.</p>
-            <div class="process-details">
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                <div class="process-detail-text"><strong>Conservation Foncière</strong><span>Vérification officielle du titre foncier, du propriétaire légal et des servitudes</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                <div class="process-detail-text"><strong>Visite physique du bien</strong><span>Photos, état réel, superficie vérifiée, environnement et voisinage</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                <div class="process-detail-text"><strong>Charges & hypothèques</strong><span>Détection de dettes, saisies, gages ou litiges judiciaires en cours</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                <div class="process-detail-text"><strong>Conformité urbanistique</strong><span>Permis de construire, régularité des plans, autorisations communales</span></div>
-              </div>
-            </div>
-            <div class="process-note">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9z"/></svg>
-              Vous recevez des mises à jour par email à chaque étape de l'enquête
-            </div>
-          </div>
-        </div>
-
-        <!-- Étape 3 -->
-        <div class="process-item reveal d2">
-          <div class="process-bubble-wrap">
-            <div class="process-bubble">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-              </svg>
-              <div class="process-num">3</div>
-            </div>
-          </div>
-          <div class="process-body">
-            <div class="process-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              Livraison sous 24 — 72h
-            </div>
-            <h3>Recevez votre rapport certifié</h3>
-            <p>Vous recevez un rapport PDF complet directement dans votre boîte mail. Le document est signé par notre équipe et rédigé en français dans un langage clair et accessible, même sans connaissance juridique.</p>
-            <div class="process-details">
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-                <div class="process-detail-text"><strong>Verdict clair</strong><span>Sûr ✓ / À risque ⚠ / Problème détecté ✗ — en tête de rapport</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
-                <div class="process-detail-text"><strong>Données légales complètes</strong><span>Propriétaire officiel, superficie, date d'immatriculation, historique</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-                <div class="process-detail-text"><strong>Photos & documentation</strong><span>Reportage photographique complet (Standard & Premium)</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <div class="process-detail-text"><strong>Rapport certifié</strong><span>Document officiel accepté par notaires et établissements bancaires</span></div>
-              </div>
-            </div>
-            <div class="process-note">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9z"/></svg>
-              Un expert reste disponible pour vous expliquer chaque point du rapport, sans frais supplémentaire
-            </div>
-          </div>
-        </div>
-
-        <!-- Étape 4 -->
-        <div class="process-item reveal d3">
-          <div class="process-bubble-wrap">
-            <div class="process-bubble">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-              <div class="process-num">4</div>
-            </div>
-          </div>
-          <div class="process-body">
-            <div class="process-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              À votre rythme
-            </div>
-            <h3>Achetez en toute confiance</h3>
-            <p>Armé de votre rapport DariCheck, vous finalisez votre achat en connaissance de cause. Si le rapport révèle un problème, vous l'évitez avant de perdre votre argent. S'il est positif, vous signez sereinement.</p>
-            <div class="process-details">
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                <div class="process-detail-text"><strong>Négociation assistée</strong><span>Utilisez les points faibles détectés pour négocier le prix (Premium)</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-                <div class="process-detail-text"><strong>Accepté par le notaire</strong><span>Rapport présentable lors de la signature de l'acte de vente</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-                <div class="process-detail-text"><strong>Suivi post-achat 30j</strong><span>Accompagnement après la signature si besoin (Premium)</span></div>
-              </div>
-              <div class="process-detail">
-                <div class="process-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 13a19.79 19.79 0 01-3.07-8.67A2 2 0 013.6 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l1.02-.95a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-                <div class="process-detail-text"><strong>Support 7j/7</strong><span>Notre équipe reste joignable pour toutes vos questions</span></div>
-              </div>
-            </div>
-            <div class="process-note">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9z"/></svg>
-              Investissement sécurisé — zéro mauvaise surprise après la signature
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
 
   <!-- ================================================================
